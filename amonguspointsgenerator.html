@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Free Among Us Points Generator</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #FFFFFF;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      font-size: 36px;
+      margin-top: 50px;
+    }
+    p {
+      font-size: 18px;
+      margin: 20px;
+    }
+    .warning {
+      color: red;
+      font-weight: bold;
+    }
+    #progress-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #666666;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    #progress {
+      width: 0%;
+      height: 100%;
+      background-color: #00FF00;
+    }
+  </style>
+  <script>
+    function generatePoints() {
+      var progress = 0;
+      var progressBar = document.getElementById("progress");
+      var timer = setInterval(function() {
+        progress += Math.random() * 10;
+        progressBar.style.width = progress + "%";
+        if (progress >= 100) {
+          clearInterval(timer);
+          alert("Points generated successfully!");
+        }
+      }, 500);
+    }
+  </script>
+</head>
+<body>
+  <h1>Free Among Us Points Generator</h1>
+  <p class="warning">Generate unlimited points instantly!</p>
+  <p>Are you tired of playing Among Us and not having enough points? Look no further!</p>
+  <p>Our revolutionary generator will grant you access to unlimited Among Us points.</p>
+  <p>How it works:</p>
+  <ol>
+    <li>Enter your username and password below</li>
+    <li>Select the number of points you want</li>
+    <li>Click the "Generate" button</li>
+    <li>Watch as the progress bar fills up!</li>
+    <li>Once complete, enjoy your free points!</li>
+  </ol>
+  <form>
+    <input type="text" placeholder="Username" required><br>
+    <input type="password" placeholder="Password" required><br>
+    <input type="number" placeholder="Number of Points" required><br>
+    <button type="button" onclick="generatePoints()">Generate</button>
+  </form>
+  <div id="progress-bar">
+    <div id="progress"></div>
+  </div>
+  <p class="warning">Note: This is purely satirical and meant for entertainment purposes only. No points will be generated.</p>
+</body>
+</html>
